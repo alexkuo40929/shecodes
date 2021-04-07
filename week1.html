@@ -82,7 +82,6 @@
 <body>
     <h1>⛅️<br>Currently 21° in Tokyo</h1>
     <h2>13° / <strong>23°</strong></h2>
-    <br>
     <ul>
         <li class>
             <h3 class>
@@ -90,12 +89,12 @@
             </h3>
             <p>10° / <strong class>22°</strong></p>
         </li>
-        <br>
+
         <li class>
             <h3>⛅️Saturday</h3>
             <p>15° / <strong class>17°</strong></p>
         </li>
-        <br>
+
         <li class>
             <h3 class>
                 ☀️Sunday
@@ -103,9 +102,28 @@
             <p>25° / <strong class>28°</strong></p>
         </li>
     </ul>
-    <br>
     <button>Change city</button>
     <p>Coded by Al Kuo</p>
+    <script>
+        function applyNow() {
+            let city = prompt("What city do you live in?");
+            let temperature = prompt("What temperature is it?");
+            if (temperature >= 18) {
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = "😊 <br>Currently " + temperature + "°C in " + city;
+            }
+            else {
+                if (0 <= temperature <= 18) {
+                    let h1 = document.querySelector("h1");
+                    h1.innerHTML = "😓 <br>Currently " + temperature + "°C in " + city;
+                }
+            }
+
+        }
+        let button = document.querySelector("button");
+        button.addEventListener("click", applyNow);
+
+    </script>
 </body>
 
 </html>
